@@ -12,6 +12,13 @@ Receita Federal do Brasil, na RAIS, no Banco Central do Brasil e outros.
 
 Também será feito o cruzamento dos dados e cálculos estatísticos.
 
+Este projeto está disponível para que você conferir nossos cálculos,
+copiar e utilizar onde desejar (desde que citada a fonte).
+
+Todo o projeto foi feito no `R()`, utilizando o `shiny()` e o pacote
+`golem()`. Para aprender mais sobre, segue um vídeo muito bom:
+<https://www.youtube.com/watch?v=fiaZgGqcubc>
+
 What is special about using `README.Rmd` instead of just `README.md`?
 You can include R chunks like so:
 
