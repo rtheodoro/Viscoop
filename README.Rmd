@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 
 O objetivo deste projeto é criar um dashboard que reuna todas as informações sobre cooperativas disponíveis nos bancos de dados da Receita Federal do Brasil, na RAIS, no Banco Central do Brasil e outros.
 
+Também será feito o cruzamento dos dados e cálculos estatísticos.
+
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
 ```{r cars}
