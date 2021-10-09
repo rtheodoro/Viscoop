@@ -1,17 +1,18 @@
 Package: Viscoop
-Title: An Amazing Shiny App
+Title: Viscoop - visualizador de dados cooperativos
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
+    person(given = "Ricardo",
+           family = "Theodoro",
            role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
+           email = "rtheodoro@usp.br")
+Description: Permite a visualizados de diversas bases de dados de cooperativas brasileiras.
 License: CC BY 4.0
 Imports: 
     config (>= 0.3.1),
     golem (>= 0.3.1),
     magrittr,
+    pkgload,
     shiny (>= 1.7.1)
 Encoding: UTF-8
 LazyData: true
