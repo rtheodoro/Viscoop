@@ -10,7 +10,7 @@
 mod_rfb_ui <- function(id){
   ns <- NS(id)
   tagList(
-    print("top") #ns() chama o name space
+    print("Em breve.") #ns() chama o name space
 
 
 

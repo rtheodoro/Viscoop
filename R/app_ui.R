@@ -11,19 +11,35 @@ app_ui <- function(request) {
     # Your application UI logic
 
     # https://rinterface.github.io/bs4Dash/articles/bs4Intro.html
-    bs4Dash::dashboardPage( title = "Viscoop",
-      dark = TRUE, scrollToTop = TRUE,
+    bs4Dash::dashboardPage(
+      title = "Viscoop",
+      dark = TRUE,
+      scrollToTop = TRUE,
       # preloader = list(html = tagList(waiter::spin_1(), "Carregando ..."), color = "#3c8dbc"),
-      bs4Dash::dashboardHeader("Viscoop"),
+      bs4Dash::dashboardHeader("Viscoop - Visualização de dados sobre Cooperativismo",
+                               tags$style(".navbar-gray-dark {
+                                 background-color: #6c07ff;
+                               }
+                               .navbar-white {
+                                 background-color: #ff8307;
+                               }")),
       bs4Dash::dashboardSidebar(title = "Sidebar",
                                 bs4Dash::sidebarMenu(
+
                                   bs4Dash::menuItem(
                                     "Home",
-                                    tabName = "home"
+                                    tabName = "home",
+                                    icon = icon("home")
                                   ),
                                   bs4Dash::menuItem(
                                     "Receita Federal Brasileira",
-                                    tabName = "RFB"
+                                    tabName = "rfb",
+                                    icon = shiny::icon("angle-double-right")
+                                  ),
+                                  bs4Dash::menuItem(
+                                    "BACEN",
+                                    tabName = "bacen",
+                                    icon = shiny::icon("angle-double-right")
                                   )
                                 )
       ),
@@ -31,10 +47,16 @@ app_ui <- function(request) {
         bs4Dash::tabItems(
           bs4Dash::tabItem(
             tabName = "home",
-            "Bem-vind@!"
+            p("Bem-vind@! Este site é mais um projeto elaborado pelo ",strong("XXX"),"que tem o objetivo de disponibilizar informações
+            estatísticas sobre as diversas Cooperativas Brasileiras utilizando informações da Receita Federal, Banco Central do Brasil e
+            RAIS.")
           ),
           bs4Dash::tabItem(
-            tabName = "RFB",
+            tabName = "rfb",
+            mod_rfb_ui("rfb_ui_1")
+          ),
+          bs4Dash::tabItem(
+            tabName = "bacen",
             mod_rfb_ui("rfb_ui_1")
           )
         )
