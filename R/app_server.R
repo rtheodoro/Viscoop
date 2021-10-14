@@ -6,5 +6,6 @@
 #' @noRd
 app_server <- function( input, output, session ) {
   # Your application server logic
+  mod_rfb_server("rfb_ui_1")
 
 }

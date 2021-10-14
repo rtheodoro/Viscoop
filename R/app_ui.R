@@ -9,24 +9,34 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    fluidPage(
-      theme = shinythemes::shinytheme("superhero"),
-      h1("Viscoop---- Visualização de Dados Cooperativos"),
-      bs4Dash::dashboardPage(
-        bs4Dash::dashboardHeader(),
-        bs4Dash::dashboardSidebar(),
-        bs4Dash::dashboardBody()
+
+    # https://rinterface.github.io/bs4Dash/articles/bs4Intro.html
+    bs4Dash::dashboardPage( title = "Viscoop",
+      dark = TRUE, scrollToTop = TRUE,
+      # preloader = list(html = tagList(waiter::spin_1(), "Carregando ..."), color = "#3c8dbc"),
+      bs4Dash::dashboardHeader("Viscoop"),
+      bs4Dash::dashboardSidebar(title = "Sidebar",
+                                bs4Dash::sidebarMenu(
+                                  bs4Dash::menuItem(
+                                    "Home",
+                                    tabName = "home"
+                                  ),
+                                  bs4Dash::menuItem(
+                                    "Receita Federal Brasileira",
+                                    tabName = "RFB"
+                                  )
+                                )
       ),
-      navbarPage(
-        title = "Informações",
-        tabPanel(title = "Painel 1"),
-        tabPanel(title = "Painel 2"),
-        tabPanel(title = "Painel 3"),
-        navbarMenu(
-          title = "Mais opções",
-          tabPanel(title = "Item 1"),
-          tabPanel(title = "Item 2"),
-          tabPanel(title = "Item 3")
+      bs4Dash::bs4DashBody(
+        bs4Dash::tabItems(
+          bs4Dash::tabItem(
+            tabName = "home",
+            "Bem-vind@!"
+          ),
+          bs4Dash::tabItem(
+            tabName = "RFB",
+            mod_rfb_ui("rfb_ui_1")
+          )
         )
       )
     )
