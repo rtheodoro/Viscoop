@@ -7,24 +7,19 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
-mod_rfb_ui <- function(id){
+mod_rfb_ui <- function(id) {
   ns <- NS(id)
   tagList(
-    print("Em breve.") #ns() chama o name space
-
-
-
-
+    print("Em breve.") # ns() chama o name space
   )
 }
 
 #' rfb Server Functions
 #'
 #' @noRd
-mod_rfb_server <- function(id){
-  moduleServer( id, function(input, output, session){
+mod_rfb_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
     ns <- session$ns
-
   })
 }
 
