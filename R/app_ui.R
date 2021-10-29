@@ -38,21 +38,36 @@ app_ui <- function(request) {
           bs4Dash::menuItem(
             "Receita Federal Brasileira",
             tabName = "rfb",
-            icon = shiny::icon("angle-double-right")
+            icon = shiny::icon("coins"),
+            bs4Dash::menuSubItem(
+              "Empresas",
+              tabName = "rfb_empresa",
+              icon = shiny::icon("industry")
+            ),
+            bs4Dash::menuSubItem(
+              "Sócios",
+              tabName = "rfb_socios",
+              icon = shiny::icon("users")
+            ),
+            bs4Dash::menuSubItem(
+              "Estabelecimento",
+              tabName = "rfb_estabelecimento",
+              icon = shiny::icon("building")
+            )
           ),
           bs4Dash::menuItem(
             "BACEN",
             tabName = "bacen",
-            icon = shiny::icon("angle-double-right"),
+            icon = shiny::icon("landmark"),
             bs4Dash::menuSubItem(
               "Balanço",
               tabName = "balancocoopcred",
-              icon = shiny::icon("angle-double-right")
+              icon = shiny::icon("balance-scale")
             ),
             bs4Dash::menuSubItem(
               "Estrutura de Governança",
               tabName = "estruturagov",
-              icon = shiny::icon("angle-double-right")
+              icon = shiny::icon("sitemap")
             )
           ),
           bs4Dash::menuItem(
@@ -63,22 +78,22 @@ app_ui <- function(request) {
           bs4Dash::menuItem(
             "RICO",
             tabName = "rico",
-            icon = shiny::icon("angle-double-right")
+            icon = shiny::icon("chart-line")
           ),
           bs4Dash::menuItem(
             "FOCCO",
             tabName = "focco",
-            icon = shiny::icon("angle-double-right")
+            icon = shiny::icon("chart-area")
           ),
           bs4Dash::menuItem(
             "Sobre",
             tabName = "sobre",
-            icon = shiny::icon("angle-double-right")
+            icon = shiny::icon("address-card")
           ),
           bs4Dash::menuItem(
             "Como Colaborar",
             tabName = "comocolaborar",
-            icon = shiny::icon("angle-double-right")
+            icon = shiny::icon("tools")
           )
         )
       ),
@@ -86,12 +101,16 @@ app_ui <- function(request) {
         bs4Dash::tabItems(
           bs4Dash::tabItem(tabName = "home", mod_home_ui("home_ui_1")),
           bs4Dash::tabItem(tabName = "rfb", mod_rfb_ui("rfb_ui_1")),
-          bs4Dash::tabItem(tabName = "bacen",mod_bacen_ui("bacen_ui_1")),
+          bs4Dash::tabItem(tabName = "rfb_empresa", mod_rfb_empresa_ui("rfb_empresa_ui_1")),
+          bs4Dash::tabItem(tabName = "rfb_socios", mod_rfb_socios_ui("rfb_socios_ui_1")),
+          bs4Dash::tabItem(tabName = "rfb_estabelecimento",
+                           mod_rfb_estabelecimento_ui("rfb_estabelecimento_ui_1")),
+          bs4Dash::tabItem(tabName = "bacen", mod_bacen_ui("bacen_ui_1")),
           bs4Dash::tabItem(tabName = "balancocoopcred",
                            mod_balanco_ui("balanco_ui_1")
           ),
           bs4Dash::tabItem(tabName = "estruturagov",
-            mod_estruturagov_ui("estruturagov_ui_1")
+                           mod_estruturagov_ui("estruturagov_ui_1")
           ),
           bs4Dash::tabItem(tabName = "rais", mod_rais_ui("rais_ui_1")),
           bs4Dash::tabItem(tabName = "rico", mod_rico_ui("rico_ui_1")),
