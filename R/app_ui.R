@@ -44,13 +44,13 @@ app_ui <- function(request) {
             tabName = "bacen",
             icon = shiny::icon("angle-double-right"),
             bs4Dash::menuSubItem(
-              "Balanço Coop. Cred.",
+              "Balanço",
               tabName = "balancocoopcred",
               icon = shiny::icon("angle-double-right")
             ),
             bs4Dash::menuSubItem(
               "Estrutura de Governança",
-              tabName = "estruturagovernancacoopcred",
+              tabName = "estruturagov",
               icon = shiny::icon("angle-double-right")
             )
           ),
@@ -60,8 +60,13 @@ app_ui <- function(request) {
             icon = shiny::icon("angle-double-right")
           ),
           bs4Dash::menuItem(
-            "CAGED",
-            tabName = "caged",
+            "RICO",
+            tabName = "rico",
+            icon = shiny::icon("angle-double-right")
+          ),
+          bs4Dash::menuItem(
+            "FOCCO",
+            tabName = "focco",
             icon = shiny::icon("angle-double-right")
           ),
           bs4Dash::menuItem(
@@ -76,43 +81,23 @@ app_ui <- function(request) {
           )
         )
       ),
-      bs4Dash::bs4DashBody(
+      bs4Dash::dashboardBody(
         bs4Dash::tabItems(
-          bs4Dash::tabItem(
-            tabName = "home",
-            mod_home_ui("/modulos/home_ui_1")
+          bs4Dash::tabItem(tabName = "home", mod_home_ui("home_ui_1")),
+          bs4Dash::tabItem(tabName = "rfb", mod_rfb_ui("rfb_ui_1")),
+          bs4Dash::tabItem(tabName = "bacen",mod_bacen_ui("bacen_ui_1")),
+          bs4Dash::tabItem(tabName = "balancocoopcred",
+                           mod_balanco_ui("balanco_ui_1")
           ),
-          bs4Dash::tabItem(
-            tabName = "rfb",
-            mod_rfb_ui("rfb_ui_1")
+          bs4Dash::tabItem(tabName = "estruturagov",
+            mod_estruturagov_ui("estruturagov_ui_1")
           ),
-          bs4Dash::tabItem(
-            tabName = "bacen",
-            mod_bacen_ui("bacen_ui_1")
-          ),
-          bs4Dash::tabItem(
-            tabName = "balancocoopcred",
-            mod_balancocoopcre_ui("balancocoopcre_ui_1")
-          ),
-          bs4Dash::tabItem(
-            tabName = "estruturagovernancacoopcred",
-            mod_estrutgovcoopcred_ui("estrutgovcoopcred_ui_1")
-          ),
-          bs4Dash::tabItem(
-            tabName = "rais",
-            mod_rais_ui("rais_ui_1")
-          ),
-          bs4Dash::tabItem(
-            tabName = "caged",
-            mod_rfb_ui("rfb_ui_1")
-          ),
-          bs4Dash::tabItem(
-            tabName = "sobre",
-            mod_sobre_ui("sobre_ui_1")
-          ),
-          bs4Dash::tabItem(
-            tabName = "comocolaborar",
-            mod_comocolaborar_ui("comocolaborar_ui_1")
+          bs4Dash::tabItem(tabName = "rais", mod_rais_ui("rais_ui_1")),
+          bs4Dash::tabItem(tabName = "rico", mod_rico_ui("rico_ui_1")),
+          bs4Dash::tabItem(tabName = "focco", mod_focco_ui("focco_ui_1")),
+          bs4Dash::tabItem(tabName = "sobre", mod_sobre_ui("sobre_ui_1")),
+          bs4Dash::tabItem(tabName = "comocolaborar",
+                           mod_comocolaborar_ui("comocolaborar_ui_1")
           )
         )
       )

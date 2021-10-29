@@ -9,9 +9,11 @@ app_server <- function(input, output, session) {
   mod_home_server("home_ui_1")
   mod_rfb_server("rfb_ui_1")
   mod_bacen_server("bacen_ui_1")
-  mod_balancocoopcre_server("balancocoopcre_ui_1")
-  mod_estrutgovcoopcred_server("estrutgovcoopcred_ui_1")
+  mod_balanco_server("balanco_ui_1")
+  mod_estruturagov_server("estruturagov_ui_1")
   mod_rais_server("rais_ui_1")
+  mod_rico_server("rico_ui_1")
+  mod_focco_server("focco_ui_1")
   mod_comocolaborar_server("comocolaborar_ui_1")
   mod_sobre_server("sobre_ui_1")
 

@@ -10,9 +10,10 @@
 mod_home_ui <- function(id){
   ns <- NS(id)
   tagList(
-    p("Bem-vind@! Este site é mais um projeto elaborado pelo ", strong("XXX"), "que tem o objetivo de disponibilizar informações
-            estatísticas sobre as diversas Cooperativas Brasileiras utilizando informações da Receita Federal, Banco Central do Brasil e
-            RAIS.")
+    p("Bem-vinde ao ", strong("Viscoop")),
+    p("Este projeto tem o objetivo de disponibilizar informações
+      estatísticas sobre as diversas Cooperativas Brasileiras utilizando informações da Receita Federal, Banco Central do Brasil e
+      RAIS.")
 
   )
 }
