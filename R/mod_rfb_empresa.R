@@ -49,7 +49,7 @@ mod_rfb_empresa_server <- function(id){
         rfb_cnpj_092021,
         options = list(paging = TRUE, ## paginate the output
                        digits = 12,
-                       pageLength = 10,  ## number of rows to output for each page
+                       pageLength = 5,  ## number of rows to output for each page
                        scrollX = TRUE,   ## enable scrolling on X axis
                        scrollY = TRUE,   ## enable scrolling on Y axis
                        width = "50%", ## use smart column width handling
